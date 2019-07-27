@@ -48,7 +48,7 @@ let userId = ""
 // let mainURL = "https://flowmob-wgpp.bizplay.co.kr/miniLogin.act"
 
 // let mainURL = "http://g-talk.gware.co.kr/miniLogin.act"
-let mainURL = 'http://joins.flowdev.info/miniLogin.act'
+let mainURL = 'http://joinsflow.flowdev.info/miniLogin.act'
 // let mainURL = 'https://flow3.flow.team/miniLogin.act?';    //test
 // let mainURL = 'https://flow.team/login.act?electronYn=Y&version=1_0_8';    //real
 
