@@ -1,0 +1,20 @@
+{
+  "name": "flowMini",
+  "main": "main.js",
+  "private": true,
+  "productName": "flowMini",
+  "version": "1.1.1",
+  "author": "Madras Check Co., Ltd",
+  "description": "flowMini",
+  "dependencies": {
+    "auto-launch": "^5.0.3",
+    "electron-log": "^2.2.7",
+    "electron-notify": "git+https://github.com/dooyou21/electron-notify.git",
+    "electron-updater": "^4.0.6",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
+  },
+  "scripts": {
+    "clean": "rm -rf ./node_modules"
+  }
+}

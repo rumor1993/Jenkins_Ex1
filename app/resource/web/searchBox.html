@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes" />
+    <link rel="stylesheet" type="text/css" href="./css/searchBox.css" />
+  </head>
+  <body>
+    <div class="inpage-search-body">
+      <input class="inpage-search-input" type="search" id="searchTxt" label="Search..." autocomplete="off" autofocus></input>
+      <div class="inpage-search-matches" id="matchCount">0/0</div>
+      <div class="inpage-search-back" id="prev">&lt;</div>
+      <div class="inpage-search-forward" id="next">&gt;</div>
+      <div class="inpage-search-close" id="closeBtn">✕</div>
+    </div>
+  </body>
+  <script>
+
+  var exports = {}
+  const input = document.querySelector('#searchTxt')
+  const closeBtn = document.querySelector('#closeBtn')
+  const searchPrev = document.querySelector('#prev')
+  const searchNext = document.querySelector('#next')
+  const matchCount = document.querySelector('#matchCount')
+  let in_composition = false;
+  closeBtn.addEventListener('click', () => {
+    closeSearchBox();
+  });
+  searchPrev.addEventListener('click', () => {
+    search(input.value, false);
+  });
+  searchNext.addEventListener('click', () => {
+    search(input.value, true);
+  });
+
+  (function(){
+    var oldLength = 0;
+    var oldSearchValue = '';
+    input.addEventListener('input', () => {
+      let newLength = input.value.length;
+      let newSearchValue = input.value;
+      if (oldLength === newLength) {
+        oldSearchValue = newSearchValue;
+      } else if (oldLength < newLength) {
+        oldLength = newLength;
+        search(oldSearchValue, true, true);
+        oldSearchValue = newSearchValue;
+      } else {
+        oldLength = newLength;
+        oldSearchValue = newSearchValue;
+        search(oldSearchValue, true, true);
+      }
+    })
+  })();
+
+  input.addEventListener('keydown', e => {
+    switch (e.code) {
+    case 'Escape':
+      closeSearchBox();
+      break;
+    case 'Enter':
+      if (e.shiftKey) {
+        search(input.value, false);
+      } else {
+        search(input.value, true);
+      }
+      break;
+    default:
+      break;
+    }
+  });
+  </script>
+</html>

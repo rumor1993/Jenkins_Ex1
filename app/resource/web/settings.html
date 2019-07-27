@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body{
+		font-family:Malgun Gothic, '돋움', Dotum, '굴림', Gulim, Arial, sans-serif;
+		src: url('./resource/web/font/MalgunGothic.eot');
+		src: url('./resource/web/font/MalgunGothic.eot?#iefix') format('embedded-opentype'),
+		url('./resource/web/font/MalgunGothic.woff') format('woff'),
+		url('./resource/web/font/MalgunGothic.ttf') format('truetype');
+		font-size:12px;
+	}
+	div.minimalistBlack {
+	  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	  border-top: 2px solid #534eaf;
+	  width: 100%;
+	  text-align: left;
+	  border-collapse: collapse;
+	}
+	.divTable.minimalistBlack .divTableCell, .divTable.minimalistBlack .divTableHead {
+	  padding: 6px 10px;
+	}
+	.divTable.minimalistBlack .divTableBody .divTableCell {
+	  border: 1px solid #dcdcdc;
+	  font-size: 13px;
+	  color: #333333;
+	}
+	.divTable.minimalistBlack .divTableHeading {
+	  background: #CFCFCF;
+	  background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+	  background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+	  background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+	  border-bottom: 3px solid #000000;
+	}
+	.divTable.minimalistBlack .divTableHeading .divTableHead {
+	  font-size: 15px;
+	  font-weight: bold;
+	  color: #000000;
+	  text-align: left;
+	}
+	.minimalistBlack .tableFootStyle {
+	  font-size: 14px;
+	}
+	/* DivTable.com */
+	.divTable{ display: table; }
+	.divTableRow { display: table-row; }
+	.divTableHeading { display: table-header-group;}
+	.divTableCell, .divTableHead { display: table-cell;}
+	.divTableHeading { display: table-header-group;}
+	.divTableFoot { display: table-footer-group;}
+	.divTableBody { display: table-row-group;}
+	.divTableCell.titleCol{
+	  width: 25%;
+	  background-color: #f6f6f6;
+	  font-weight: bold;
+	}
+	.button{
+		color: #ffffff;
+		display: inline-block;
+		padding: 3px 10px;
+		font-weight: bold;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	.button.btnDefault{
+		background-color: #746fcc;
+	}
+	.button.btnWhite{
+		background-color: #eeeeee;
+		color: #333333;
+	}
+	</style>
+
+	
+	<!-- <script>window.$ = window.jQuery = require('jquery')</script> -->
+	<script>
+		
+	const ipc = require('electron').ipcRenderer
+	
+	
+
+	window.onload = function() {
+		ipc.send('getConfig', 'downloadPath')
+		ipc.send('getConfig', 'autoLaunch')
+		ipc.send('getConfig', 'autoLock')
+		ipc.send('getConfig', 'lockSec')
+		ipc.send('getConfig', 'lengCode')
+
+		document.getElementById('saveSettings').addEventListener('click', () => {
+			ipc.send('saveSettings', [
+				{'key': 'autoLaunch', 'val': document.querySelector('input[name="autoLaunch"]:checked').value === 'true' ? true : false},
+				{'key': 'autoLock', 'val': document.querySelector('input[name="autoLock"]:checked').value === 'true' ? true : false},
+				{'key': 'downloadPath', 'val': document.getElementById('downloadPath').value},
+				{'key': 'lockSec', 'val': document.getElementById('lockSec').value},
+				{'key': 'lengCode', 'val': document.getElementById('lengCode').value }
+			])
+			ipc.send('changeAutoLaunchStatus', document.querySelector('input[name="autoLaunch"]:checked').value === 'true' ? true : false)
+			ipc.send('lockState')
+			alert('설정 저장되었습니다.')
+			window.close()
+		})
+		document.getElementById('closeSettingsWindow').addEventListener('click', () => {
+			window.close()
+		})
+
+		document.getElementById('changeDownloadPath').addEventListener('click', () => {
+			ipc.send('openDownloadPathSelectWindow')
+		})
+
+
+		
+		document.getElementById('autoLockTrue').addEventListener('click', () => {
+			document.getElementById('lockSec').disabled = false
+		})
+
+		document.getElementById('autoLockFalse').addEventListener('click', () => {
+			document.getElementById('lockSec').disabled = true
+		})
+
+	}
+
+
+	ipc.on('downloadPath', (event, config) => {
+		document.getElementById('downloadPath').value = config
+	})
+
+	ipc.on('autoLaunch', (event, config) => {
+		if (config) {
+			document.getElementById('autoLaunchTrue').checked = true
+			document.getElementById('autoLaunchFalse').checked = false
+		} else {
+			document.getElementById('autoLaunchTrue').checked = false
+			document.getElementById('autoLaunchFalse').checked = true
+		}
+	})
+
+	ipc.on('autoLock', (event, config) => {
+		if (config) {
+			document.getElementById('autoLockTrue').checked = true
+			document.getElementById('autoLockFalse').checked = false
+			document.getElementById('lockSec').disabled = false
+		} else {
+			document.getElementById('autoLockTrue').checked = false
+			document.getElementById('autoLockFalse').checked = true
+			document.getElementById('lockSec').disabled = true
+		}
+	})
+
+	ipc.on('lockSec', (event, config) => {
+			document.getElementById('lockSec').value = config
+	})
+
+	ipc.on('lengCode', (event, config) => {
+			document.getElementById('lengCode').value = config
+	})
+
+
+	</script>
+</head>
+<body>
+	<div style="padding:0 10px 0 10px;">
+
+		<div style="margin:30px 0 10px 0;"><strong style="color: #333; font-size:22px;" data-langcode="E1">설정</strong></div>
+		<div class="divTable minimalistBlack">
+			<div class="divTableBody">
+				<div class="divTableRow">
+					<div id="test" class="divTableCell titleCol" data-langcode="E2">부팅 시 자동실행</div>
+					<div class="divTableCell">
+						<input type="radio" name="autoLaunch" id="autoLaunchTrue" value="true" data-langcode="E3"> 예
+						<input type="radio" name="autoLaunch" id="autoLaunchFalse" value="false" data-langcode="E4"> 아니오
+					</div>
+				</div>
+				<div class="divTableRow">
+					<div class="divTableCell titleCol" data-langcode="E5">잠금 모드 설정</div>
+					<div class="divTableCell">
+						<input type="radio" name="autoLock" id="autoLockTrue" value="true" data-langcode="E6"> 사용
+						<select id='lockSec'>
+							<option value="1" data-langcode="E7"> 1분 후</option>
+							<option value="2" data-langcode="E8"> 2분 후</option>
+							<option value="3" data-langcode="E9"> 3분 후</option>
+							<option value="5" data-langcode="E10"> 5분 후</option>
+							<option value="10" data-langcode="E11" selected> 10분 후</option>
+						</select>
+						<input type="radio" name="autoLock" id="autoLockFalse" value="false" data-langcode="E12"> 사용 안함 
+					</div>
+				</div>
+				<div class="divTableRow">
+					<div class="divTableCell titleCol" data-langcode="E12">파일 다운로드 경로</div>
+					<div class="divTableCell">
+						<input type="text" id="downloadPath" value="path" disabled style="font-size:14px;width:80%;margin-bottom:10px;">
+						<span class="button btnDefault" id="changeDownloadPath" data-langcode="E13">변경</span>
+					</div>
+				</div>
+				
+				<div class="divTableRow" style="display: none">
+					<div class="divTableCell titleCol">언어 설정</div>
+					<div class="divTableCell">
+						<select id='lengCode'>
+							<option value="ko"> 한국어 </option>
+							<option value="en"> 영어 </option>
+							<option value="jp"> 일본어 </option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="width:100%;text-align:center;height:100px;padding-top:50px;">
+		<span class="button btnDefault" id="saveSettings" style="font-size:13px;">저장</span>
+		<span class="button btnWhite" id="closeSettingsWindow" style="font-size:13px;">취소</span>
+	</div>
+</body>
+</html>

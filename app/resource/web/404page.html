@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+	<title>404 Error</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Cache-Control" content="No-Cache">
+	<meta http-equiv="Pragma" content="No-Cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style>
+	
+/*** layout ***/
+
+/* 1 */
+.gt-menutab .mnt-li a.orga{background-image:url(./image/gnbmenu1.gif);}
+.gt-menutab .mnt-li a.orga:hover{background-image:url(./image/gnbmenu1_over.gif);}
+.gt-menutab .mnt-li a.orga.on{background-image:url(./image/gnbmenu1_on.gif);}
+/* 2 */
+.gt-menutab .mnt-li a.chat{background-image:url(./image/gnbmenu2.gif);}
+.gt-menutab .mnt-li a.chat:hover{background-image:url(./image/gnbmenu2_over.gif);}
+.gt-menutab .mnt-li a.chat.on{background-image:url(./image/gnbmenu2_on.gif);}
+/* 3 */
+.gt-menutab .mnt-li a.chan{background-image:url(./image/gnbmenu3.gif);}
+.gt-menutab .mnt-li a.chan:hover{background-image:url(./image/gnbmenu3_over.gif);}
+.gt-menutab .mnt-li a.chan.on{background-image:url(./image/gnbmenu3_on.gif);}
+/* 4 */
+.gt-menutab .mnt-li a.more{background-image:url(./image/gnbmenu4.gif);}
+.gt-menutab .mnt-li a.more:hover{background-image:url(./image/gnbmenu4_over.gif);}
+.gt-menutab .mnt-li a.more.on{background-image:url(./image/gnbmenu4_on.gif);}
+/* 5 */
+.gt-menutab .mnt-li a.prjt{background-image:url(./image/gnbmenu5.png);opacity:1;}
+.gt-menutab .mnt-li a.prjt:hover{background-image:url(./image/gnbmenu5_on.png);opacity:0.2;}
+.gt-menutab .mnt-li a.prjt.on{background-image:url(./image/gnbmenu5_on.png);opacity:1;}
+/* 6 */
+.gt-menutab .mnt-li a.arlm{background-image:url(./image/gnbmenu6.png);opacity:1;}
+.gt-menutab .mnt-li a.arlm:hover{background-image:url(./image/gnbmenu6_on.png);opacity:0.2;}
+.gt-menutab .mnt-li a.arlm.on{background-image:url(img/img_gtalk/gnbmenu6_on.png);opacity:1;}
+
+
+
+*{margin:0;padding:0;}
+html {-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {display: block;}
+audio,canvas,progress,video {vertical-align: baseline; display: inline-block;}
+audio:not([controls]) {height: 0; display: none;}
+svg:not(:root) {overflow: hidden;}
+[hidden] {display: none;}
+template {display: none;}
+abbr[title] {border-bottom-color: currentColor; border-bottom-width: 1px; border-bottom-style: dotted;}
+b,optgroup,strong {font-weight: 700;}
+dfn {font-style: italic;}
+mark {background: rgb(255, 255, 0); color: rgb(0, 0, 0);}
+small {font-size: 80%;}
+sub {line-height: 0; font-size: 75%; vertical-align: baseline; position: relative;}
+sup {line-height: 0; font-size: 75%; vertical-align: baseline; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+figure {}
+pre {overflow: auto;}
+code,kbd,pre,samp {font-family: monospace,monospace; font-size: 1em;}
+ul,ol {list-style: none;}
+em {font-style: normal;}
+img {border: 0;}
+button,input,optgroup,select,textarea {font: inherit; /* color: inherit; */ font-size-adjust: inherit; font-stretch: inherit;}
+button {border: 0; overflow: visible; cursor: pointer;}
+button,select {text-transform: none;}
+button,html input[type=button],input[type=reset],input[type=submit] {cursor: pointer;}
+button[disabled],html input[disabled] {cursor: default;}
+button[disabled] {
+	cursor: default; pointer-events: none; background-color: rgb(204, 204, 204);
+}
+textarea {overflow: auto; resize: none;}
+input {line-height: normal;}
+input[type=checkbox],input[type=radio] {width:16px;height:16px;}
+input[type=search] {box-sizing: content-box; -webkit-appearance: textfield;}
+input[type=text] {-webkit-appearance: none;}
+input , textarea {outline: 0;}
+fieldset {border: 0;}
+legend,caption,hr{display:none;}
+table {border-collapse: collapse; border-spacing: 0;}
+td,th {padding: 0px;}
+a {cursor:pointer; outline: 0; text-decoration: none; background-color: transparent;}
+a:active,
+a:focus,
+a:hover {outline: 0px; text-decoration: none;}
+/* Chrome Field Outline = None */
+input:focus{outline:none;}
+textarea:focus{outline:none;}
+select:focus{outline:none;}
+button:focus{outline:none;}
+.placeholder {color: #a2a2a2 !important;}
+:-ms-input-placeholder {color: #a2a2a2;}
+::-ms-clear {width: 0; height: 0; display: none;}
+::-ms-reveal {width: 0; height: 0; display: none;}
+/* Webkit */
+input::-webkit-input-placeholder {color: #a2a2a2 !important;}
+textarea::-webkit-input-placeholder {color: #a2a2a2 !important;}
+/* Firefox 4-18 */
+input:-moz-placeholder {color: #a2a2a2 !important; }
+textarea:-moz-placeholder {color: #a2a2a2 !important;}
+/* Firefox 19+ */
+input::-moz-placeholder {color: #a2a2a2 !important; }
+textarea::-moz-placeholder {color: #a2a2a2 !important;}
+/* IE10+ */
+input:-ms-input-placeholder {color: #a2a2a2 !important; }
+textarea:-ms-textarea-placeholder {color: #a2a2a2 !important;}
+/* placeholder 줄바꿈 */
+::-webkit-input-placeholder::before {
+  content: "FIRST\000ASECOND\000ATHIRD";
+}
+::-moz-placeholder::before {
+  content: "FIRST\000ASECOND\000ATHIRD";
+}
+:-ms-input-placeholder::before {
+  content: "FIRST\000ASECOND\000ATHIRD";
+}
+
+.blind{visibility:hidden;text-indent:-9999999px;font-size:0;height:0;line-height:0;overflow:hidden;}
+.t_center{text-align:center !important;}
+.t_left{text-align:left !important;}
+.t_right{text-align:right !important;}
+.ltsp-1{letter-spacing:-1px !important;}
+.logout, .txt_r{color:#d64648 !important;}
+
+body,html {height: 100%; min-height: 100%;}
+body {
+	min-width:380px;
+	font-size:12px;
+	font-family:Malgun Gothic, AppleSDGothicNeo, '돋움', '굴림', Arial, sans-serif;
+	-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+	backface-visibility: hidden; 
+}
+
+/*** Grobal ***/
+/* 디자인 checkbox */
+.form_chk{display:inline-block;position:relative;line-height:0;font-size:0;overflow:hidden;}
+.form_chk input[type=checkbox]{
+	display:block;z-index:-1;
+	position:absolute;top:-999999999999px;left:-99999999999px;
+	-webkit-appearance: none;
+}
+.form_chk label{
+	cursor:pointer;
+	position:relative;
+	display:inline-block;
+	width:20px;height:20px;
+	border-radius:20px;
+	background-color:#fff;
+	background-image:url(../img_gtalk/form_chk_off.png);
+	background-repeat:no-repeat;
+}
+.form_chk input[type=checkbox]:checked + label{background-image:url(../img_gtalk/form_chk_on.png);}
+/* 기본타입 */
+.form_chk2{display:inline-block;position:relative;overflow:hidden;}
+.form_chk2 input[type=checkbox]{
+	display:block;z-index:-1;
+	position:absolute;top:-999999999999px;left:-99999999999px;
+	-webkit-appearance: none;
+}
+.form_chk2 label{
+	cursor:pointer;
+	display:inline-block;
+	padding-left:18px;
+	height:14px;line-height:14px;
+	font-size:11px;color:#505050;
+}
+.form_chk2 label:after{
+	content:" ";
+	display:block;
+	position:absolute;top:3px;left:0;
+	width:13px;height:13px;
+	background-image:url(../img_gtalk/form_chk2_off.gif);
+	background-repeat:no-repeat;
+}
+.form_chk2 input[type=checkbox]:checked + label:after{background-image:url(../img_gtalk/form_chk2_on.gif);}
+/* 디자인 input */
+.inputbox{
+	position:relative;
+	display:inline-block;
+	padding-left:9px;padding-right:35px;
+	height:36px;
+	border:1px solid #e0e2e4;
+	background-color:#fff;
+	border-radius:2px;
+}
+.inputbox input{
+	width:100%;height:100%;
+	border:0;
+}
+.inputbox a{
+	display:block;
+	position:absolute;top:0;right:0;
+	width:32px;height:100%;
+	background:url(../img_gtalk/btn_ipt_del.gif) no-repeat center center;
+}
+
+/* 상태아이콘 */
+.state{
+	display:inline-block;vertical-align:middle;
+	width:12px;height:12px;
+	border-radius:100%;
+}
+.state.c_green{background-color:#43b581;}
+.state.c_yellow{background-color:#faa61a;}
+.state.c_red{background-color:#f04747;}
+.state.c_gray{background-color:#747f8d;}
+/* 배지 */
+.bdg_count{
+	display:inline-block;vertical-align:middle;
+	padding:0 6px;
+	min-width:6px;height:18px;line-height:18px;
+	text-indent:-1px;
+	font-size:11px;color:#fff;font-weight:bold;text-align:center;letter-spacing:-1px;font-family:Verdana;
+	background-color:#d64648;
+	border-radius:18px;
+}
+/* count */
+.li-count{vertical-align:middle;font-size:11px;color:#4c80d6;font-weight:bold;letter-spacing:-1px;font-family:Verdana;}
+/* 공통버튼 */
+.btn-style1{
+	display:inline-block;vertical-align:middle;
+	padding:0 18px;
+	min-width:42px;height:28px;line-height:200%;
+	font-size:13px;text-align:center;
+	border:1px solid;
+	border-radius:3px;
+}
+.btn-style1+.btn-style1{margin-left:4px;}
+.btn-style1.c_white{color:#333;border-color:#bdbdbd;background-color:#fff;}
+.btn-style1.c_purple{color:#fff;border-color:#6661c1;background-color:#6661c1;}
+.btn-style1.c_gray {color: #333;border-color: #bdbdbd;background-color: rgb(221, 221, 221);}
+
+
+
+
+/*** layout ***/
+.gtalk-layout1{
+	position:relative;
+	height:100%;
+}
+.fixed-top{
+	position:absolute;top:0;left:0;right:0;
+	height:140px;
+}
+.gt-scrollbody{
+	position:absolute;top:141px;left:0;right:0;bottom:0;
+	overflow-y:auto;
+}
+.gt-gnb{
+	background-color:#5957a4;
+}
+.gtalk-layout2 .fixed-top{height:100px;}
+.gtalk-layout2 .gt-scrollbody{top:100px; background-color:#f7f7f9;}
+/* top */
+.gt-userinfo-box{
+	position:relative;
+	height:60px;
+}
+.gt-userinfo-box img.user{
+	position:absolute;top:10px;left:20px;
+	width:40px;height:40px;
+	border-radius:100%;
+}
+.gt-btnalarm{
+	display:block;
+	position:absolute;top:15px;right:20px;
+	width:30px;height:30px;
+	background-image:url(../img_gtalk/btn_alarm.gif);
+}
+.gt-btnalarm.off{background-position:0 -30px;}
+.gt-userinfo{
+	position:relative;
+	padding:10px 0 0 74px;
+}
+.gt-userinfo .name{
+	font-size:14px;color:#fff;font-weight:bold;
+}
+/* 상태 */
+.state-wrap{
+	position:relative;
+	margin-top:4px;
+}
+.state-wrap a.txt{
+	display:inline-block;
+	color:#fff;
+}
+.state-wrap a.txt .state{margin-right:6px;}
+/* 상태 - type2 */
+.state-wrap.type2 a.txt{
+	color:#111;
+}
+.state-wrap.type2 a.txt:after{
+	background-position:-10px 0;
+}
+/* 상태 - bul없음 */
+.state-wrap a.txt.bulnone{
+	cursor:default;
+}
+.state-wrap a.txt.bulnone:after{
+	background:none;
+}
+/* 상단메뉴탭 */
+.gt-menutab{
+	margin-left:15px;
+	height:40px;
+}
+.gt-menutab .mnt-li{
+	position:relative;
+	float:left;vertical-align:top;
+	margin-right:10px;
+	width:50px;height:40px;
+	box-sizing:border-box;
+}
+.gt-menutab .mnt-li a{
+	display:block;
+	width:100%;height:100%;
+	background-position:center 4px;
+	background-repeat:no-repeat;
+}
+
+
+.gt-menutab .mnt-li .bdg_count{
+	position:absolute;top:2px;right:-2px;
+}
+.gt-srchwrap{
+	padding:7px 12px;
+	min-height:40px;
+	background-color:#f7f7f9;
+	border-bottom:1px solid #ebebeb;
+	box-sizing:border-box;
+}
+
+
+
+
+.modal-style{
+	z-index:2100;
+	position:fixed;top:0;left:0;right:0;bottom:0;
+}
+.modal-style .bg{
+	z-index:1;
+	width:100%;height:100%;
+	background-color:rgba(0, 0, 0, .7);
+}
+.modal-style .text-cont{
+	vertical-align:middle;
+	line-height:23px;
+	font-size:13px;color:#000;
+}
+.modal-style .btm-box{padding-top:5px;padding-bottom:20px;text-align:center;}
+.modal-style .alert, .modal-style .lypop-st{
+	z-index:500;
+	position:absolute;top:50%;left:50%;
+	margin-left:-160px;margin-top:-70px;
+	min-width:320px;min-height:140px;
+	border:1px solid rgba(0, 0, 0, .3);
+	background-color:#fff;
+	border-radius:2px;
+	box-shadow:0 0 4px 1px rgba(0, 0, 0, .2);
+}
+.modal-style .alert .text-cont{
+	display:table-cell;
+	width:320px;height:90px;
+	text-align:center;
+}
+.modal-style .alert .btm-box{padding-top:0;}
+.modal-style .lypop-st .top{
+	position:relative;
+	height:36px;
+	border-bottom:1px solid #e5e5e5;
+}
+.modal-style .lypop-st .top h1{
+	padding:8px 0 0 15px;
+	font-size:13px;color:#000;font-weight:normal;
+}
+.modal-style .lypop-st .top .btn-ly-close{
+	display:block;
+	position:absolute;top:0;right:0;
+	width:36px;height:36px;
+	background:url(../img_gtalk/btn_popclose.gif) no-repeat;
+}
+.modal-style .lypop-st .text-cont{
+	padding:14px 15px;
+}
+
+   		/* 공통버튼 */
+		   .btn-style1{
+	display:inline-block;vertical-align:middle;
+	padding:0 18px;
+	min-width:42px;height:28px;line-height:200%;
+	font-size:13px;text-align:center;
+	border:1px solid;
+	border-radius:3px;
+}
+.btn-style1+.btn-style1{margin-left:4px;}
+.btn-style1.c_white{color:#333;border-color:#bdbdbd;background-color:#fff;}
+.btn-style1.c_purple{color:#fff;border-color:#6661c1;background-color:#6661c1;}
+
+	
+
+
+		
+	</style>
+	<script>
+
+	let userid = ""
+	let intervalCount = 0;
+	let intervalCountLimit = 10;
+	let checkInterval = setInterval(() => {
+		doIfNetworkAvailable(() => {
+		fn_updateOnlineStatus('online')
+		}, () => {
+		fn_updateOnlineStatus('offline')
+		})
+	}, 1000)
+
+	window.addEventListener('online',  () => {
+      fn_updateOnlineStatus('online')
+	})
+  	window.addEventListener('offline',  () => {
+      fn_updateOnlineStatus('online')
+	})
+
+	window.onfocus = () => {
+		doIfNetworkAvailable(() => {
+			fn_updateOnlineStatus('online')
+		}, () => {})
+	}
+
+
+
+
+
+	// let loadurl = 'http://flowdev.info/login.act?electronYn=Y&version=1_0_7';   //dev
+	// let loadurl = 'https://flow3.flow.team/login.act?electronYn=Y&version=1_0_7';    //test
+	let loadurl = 'https://flow.team/login.act?electronYn=Y&version=1_0_7';    //real
+
+	function doIfNetworkAvailable(yes, no) {
+		if (++intervalCount > intervalCountLimit) {
+			clearInterval(checkInterval)
+		}
+		if (navigator.onLine) {
+			const xhr = XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHttp')
+			xhr.onload = function() {
+				if (yes instanceof Function) {
+					yes();
+				}
+			}
+			xhr.onerror = function() {
+				if (no instanceof Function) {
+					no();
+				}
+			}
+			xhr.open("GET", loadurl, true)
+			xhr.send()
+		} else {
+			if (no instanceof Function) {
+				no();
+			}
+		}
+	}
+
+	function fn_restart() {
+		doIfNetworkAvailable(() => {
+			fn_updateOnlineStatus('online')
+		}, () => {
+			alert('네트워크 연결을 먼저 확인해주세요!');
+		})
+	}
+	function fn_openMoreInfo() {
+		doIfNetworkAvailable(() => {
+			window.open('https://flow.zendesk.com/hc/ko/articles/115006020488--데스크탑앱-연결이-되지-않습니다', '_blank', 'top='+window.screenTop+', left='+window.screenLeft+', width=1100, height=800');
+		}, () => {
+			alert('네트워크 연결을 먼저 확인해주세요!');
+		})
+	}
+	</script>
+</head>
+
+
+<div class="gt-gnb">
+	<!-- 사진/이름/상태/알림22 -->
+	<div class="gt-userinfo-box">
+		<img id="user_prfl" src="./image/thumb40.png" alt="" class="user" style="object-fit: cover;">
+		<div class="gt-userinfo" style="-webkit-app-region: no-drag;height:40px;">
+			<strong id="name" class="name" style="cursor:pointer;">플로우에 연결할 수 없습니다.</strong>
+			<div class="state-wrap">
+				<a id="state" style="cursor:pointer;" class="txt"><em class="state c_green"></em>온라인 <span class="arrow"> ▾ </span></a>
+				<!-- 상태layer -->
+				<div id="stateLayer" class="state-lypop" style="top: 23px; left: 0; display: none;">
+					<ul>
+						<li data-langcade="DFM017"><em class="state c_green"></em>온라인</li>
+						<li data-langcade="DFM018"><em class="state c_yellow"></em>자리비움</li>
+						<li data-langcade="DFM019"><em class="state c_red"></em>다른용무중</li>
+						<li data-langcade="DFM020"><em class="state c_gray"></em>오프라인</li>
+					</ul>
+				</div><!-- //상태layer -->
+			</div>
+			
+		</div>
+		<!-- [D] a class="on/off" 있음 -->
+		
+		<a id="alarmBtnClicked" class="gt-btnalarm on" style="display:none;"><span class="blind" data-langcade="DFM021">알림켜기</span></a>
+		<a id="topHomeBtn" class="gt-btnhome" style="display:block;"><span class="blind" data-langcade="DFM022">홈 바로가기</span></a>
+		
+	</div>
+	<!-- 조직도/채팅/채널/더보기 -->
+	<div class="gt-menutab"><!-- [D] a class="on/off" 있음 -->
+		<div class="mnt-li"><a id="orgaBtn" class="orga" title="조직도"><span class="blind" data-langcode="FIL1572">조직도</span></a></div>
+		<div class="mnt-li"><a id="chatBtn" class="chat off" title="채팅"><span class="blind" data-langcode="FL589">채팅</span><span class="bdg_count" id="chatNoReadCnt" style="display:none;">0</span></a></div>
+		
+		<div class="mnt-li"><a id="prjtBtn" class="prjt off" title="프로젝트"><span class="blind" data-langcode="CCM1292">프로젝트</span></a></div>
+		<div class="mnt-li"><a id="alrmBtn" class="arlm off" title="알림"><span class="blind" data-langcode="FNS1776">알림</span><span class="bdg_count" id="arlmNoReadCnt" style="display:none;"></span></a></div>
+		
+		<div class="mnt-li" style="display:none;"><a id="chanBtn" class="chan off" title="채널"><span class="blind" data-langcode="DFM023">채널</span></a></div>
+		<div class="mnt-li"><a id="moreBtn" class="more off on" title="더보기"><span class="blind" data-langcode="CC675">더보기</span></a></div>
+	</div>
+</div>
+
+
+<div class="modal-style">
+		<div class="bg"></div>
+		<div class="alert">
+			<div class="text-cont">
+				인터넷 연결 상태가 원활하지 않습니다.<br>확인 후, 재연결 시도하시기 바랍니다.
+			</div>
+			<div class="btm-box">
+				<a class="btn-style1 c_purple" onclick="fn_restart()" >확인</a>
+			</div>
+		</div>
+	</div> 
+	
+	</body>
+	</html>
+
+
+</body>
+</html>

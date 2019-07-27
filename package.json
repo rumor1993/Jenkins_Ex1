@@ -1,22 +1,95 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "name": "flow-mini-build",
+  "version": "1.0.9",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "DEBUG=electron-* electron ./app --enable-logging",
+    "clean": "rm -rf ./node_modules",
+    "clean-dist": "rm -rf ./dist",
+    "dev": "NODE_ENV='development' npm run start",
+    "dist": "npm run clean-dist && build -mw --x64 --ia32",
+    "pack-mac": "build -m",
+    "pack-win": "build -w --x64 --ia32",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "winStart": "electron ./app --enable-logging"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "build": {
+    "appId": "com.madrascheck.flowmini",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "publish": [
+        "github"
+      ],
+      "icon": "./build/basic_ico256.icns"
+    },
+    "dmg": {
+      "icon": "./build/win-setup_ico.icns",
+      "title": "${productName}",
+      "background": "./build/flow-dmg-background.png",
+      "window": {
+        "width": 550,
+        "height": 400
+      },
+      "contents": [
+        {
+          "x": 145,
+          "y": 154
+        },
+        {
+          "x": 405,
+          "y": 154,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "nsis",
+      "publish": [
+        "github"
+      ],
+      "icon": "build/flow_icon2.ico",
+      "publisherName": "Madras Check Co., Ltd"
+    },
+    "nsis": {
+      "oneClick": true,
+      "runAfterFinish": true,
+      "installerHeaderIcon": "./build/installerHeaderIcon.ico",
+      "installerIcon": "build/win-setup_ico.ico",
+      "deleteAppDataOnUninstall": true,
+      "menuCategory": "flowMini"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "madrascheck",
+        "repo": "flow-desktop"
+      }
+    ]
+  },
+  "author": "Madras Check Co., Ltd",
+  "license": "ISC",
   "devDependencies": {
-    "electron": "^5.0.7"
+    "babel-eslint": "^7.2.3",
+    "electron": "^5.0.4",
+    "electron-builder": "^20.29.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "gulp": "^3.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madrascheck/flow-desktop.git"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
   }
 }
