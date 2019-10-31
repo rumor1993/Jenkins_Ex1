@@ -11,7 +11,7 @@
     "electron-log": "^2.2.7",
     "electron-notify": "git+https://github.com/dooyou21/electron-notify.git",
     "electron-updater": "^4.0.6",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.13",
     "moment": "^2.18.1"
   },
   "scripts": {
